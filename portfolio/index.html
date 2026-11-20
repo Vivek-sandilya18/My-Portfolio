@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivek Sharma | Software Developer</title>
+<meta name="description" content="Vivek Sharma builds web applications and APIs, from Spring Boot backends to clean, responsive interfaces.">
+<meta name="theme-color" content="#151b3d">
+<meta property="og:title" content="Vivek Sharma | Software Developer">
+<meta property="og:description" content="I build web applications and APIs, from Spring Boot backends to clean, responsive interfaces.">
+<meta property="og:image" content="assets/vivek.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Delicious+Handrawn&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+<a class="skip" href="#about">Skip to content</a>
+<div id="progress"></div>
+
+<!-- evening scene (fixed background) -->
+<div id="scene" aria-hidden="true">
+  <div class="rays"></div><div class="glow" id="glow"></div><div class="sun" id="sun"></div>
+  <div class="cloud a"></div><div class="cloud b"></div><div class="cloud c"></div><div class="cloud d"></div>
+  <svg id="land" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice">
+    <rect id="horizon" x="0" y="330" width="2" height="2" fill="none"/>
+    <path class="far" d="M0 345 L100 312 L220 338 L360 296 L520 340 L700 302 L880 342 L1060 306 L1240 344 L1440 300 V560 H0Z"/>
+    <path class="plain" d="M0 370 H1440 V560 H0Z"/>
+    <g id="lights" fill="#ffd9a0">
+      <circle cx="120" cy="392" r="1.6"/><circle cx="210" cy="400" r="1.3"/><circle cx="300" cy="388" r="1.6"/><circle cx="410" cy="398" r="1.3"/><circle cx="520" cy="390" r="1.6"/>
+      <circle cx="610" cy="402" r="1.3"/><circle cx="820" cy="392" r="1.6"/><circle cx="930" cy="400" r="1.3"/><circle cx="1040" cy="388" r="1.6"/><circle cx="1150" cy="398" r="1.3"/>
+      <circle cx="1250" cy="392" r="1.6"/><circle cx="1340" cy="402" r="1.3"/><circle cx="360" cy="406" r="1.2"/><circle cx="880" cy="408" r="1.2"/><circle cx="1190" cy="410" r="1.2"/>
+    </g>
+    <path class="mid" d="M0 430 Q360 402 720 428 T1440 416 V560 H0Z"/>
+    <path class="grass" d="M0 478 Q300 452 620 474 T1440 462 V560 H0Z"/>
+    <g class="grass" id="tree"><rect x="164" y="360" width="9" height="130"/><circle cx="170" cy="338" r="42"/><circle cx="132" cy="366" r="32"/><circle cx="208" cy="368" r="34"/><circle cx="168" cy="300" r="30"/><circle cx="140" cy="322" r="26"/></g>
+    <g class="grass" id="me">
+      <circle cx="702" cy="428" r="9"/>
+      <path d="M690 438 Q702 432 714 440 L720 466 L688 470Z"/>
+      <path d="M688 466 L732 462 L752 478 L684 480Z"/>
+      <path d="M714 446 L728 452 L726 458 L712 454Z"/>
+    </g>
+    <path id="screen" d="M722 449 L741 441 L744 455 L728 460Z" fill="#7be495" opacity=".75"/>
+  </svg>
+</div>
+<div id="shade"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="loader" id="loader" aria-hidden="true"><small>Loading</small><div class="count" id="count">0%</div></div>
+<div class="cursor" id="cursor" aria-hidden="true">Open ↗</div>
+
+<header>
+  <nav>
+    <a href="#about" data-s="about">About</a>
+    <a href="#skills" data-s="skills">Skills</a>
+    <a href="#work" data-s="work">Work</a>
+    <a href="#contact" data-s="contact">Contact</a>
+  </nav>
+  <div class="right">
+    <a href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    <span class="role">Software Developer</span>
+  </div>
+</header>
+
+<main>
+  <div class="hero" id="top">
+    <div class="pill"><i></i>Available for opportunities</div>
+    <div class="hi">Hello, I'm</div>
+    <h1 id="name">Vivek Sharma</h1>
+    <p class="lead">I build web applications and APIs for a living. Still learning something new every day.</p>
+    <div class="scroll"><i></i>Scroll</div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Java</span><span>Spring Boot</span><span>Python</span><span>REST APIs</span><span>Docker</span><span>React</span><span>Angular</span><span>MySQL</span><span>PostgreSQL</span><span>Hibernate</span>
+      <span>Java</span><span>Spring Boot</span><span>Python</span><span>REST APIs</span><span>Docker</span><span>React</span><span>Angular</span><span>MySQL</span><span>PostgreSQL</span><span>Hibernate</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="rv">Software<br>Developer</h2>
+      <div class="sub rv">by practice</div>
+      <div class="about-grid">
+        <div class="rv">
+          <p>I'm a Computer Science student (B.Tech, 2023–2027) from Noida. I care about software that is simple to use and simple to maintain, from the database all the way to the interface.</p>
+          <p>I work across the stack: Java and Spring Boot on the backend, Python with Flask and Django, and HTML, CSS, JavaScript and React on the front. I've interned as a Java &amp; Spring Boot developer and as a web developer, building REST APIs, layered backends and responsive interfaces.</p>
+          <h3>Learner by habit</h3>
+          <p>I test what I build and ship it with Docker so it runs the same everywhere. Right now I'm building Civic Seva, my final year project, and exploring system design and DevOps.</p>
+        </div>
+        <div class="photo rv"><img src="assets/vivek.jpg" alt="Vivek Sharma" width="900" height="1200" loading="lazy"></div>
+      </div>
+      <div class="stats">
+        <div class="rv"><b data-n="2">0</b><span>Internships</span></div>
+        <div class="rv"><b data-n="10" data-plus="1">0</b><span>Projects</span></div>
+        <div class="rv"><b data-n="10" data-plus="1">0</b><span>Technologies</span></div>
+        <div class="rv"><b data-n="2027">0</b><span>B.Tech graduation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2 class="rv">Tools I <em>use</em></h2>
+      <div class="skills">
+        <div class="sk rv"><h3>Languages</h3><p><span>Java</span><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span></p></div>
+        <div class="sk rv"><h3>Backend</h3><p><span>Spring Boot</span><span>Hibernate / JPA</span><span>REST APIs</span><span>Django</span><span>Flask</span></p></div>
+        <div class="sk rv"><h3>Frontend</h3><p><span>React</span><span>Angular</span><span>HTML</span><span>CSS</span><span>Bootstrap</span></p></div>
+        <div class="sk rv"><h3>Data &amp; tools</h3><p><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Git</span><span>Docker</span><span>Maven</span><span>Postman</span><span>JUnit 5</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2 class="rv">Selected <em>works</em></h2>
+      <div class="work-grid">
+        <div class="intro rv">
+          <p>I like products where the details matter, and I take ownership from the database and API layer through to the screen.</p>
+          <p>My work spans civic-tech, student records, publishing, movies and file tools, built with Java, Python, TypeScript and JavaScript.</p>
+        </div>
+        <div class="list">
+          <a class="item" data-open href="https://github.com/Vivek-sandilya18" target="_blank" rel="noopener"><span class="num">01</span><div><h3>Civic Seva</h3><p>A platform where citizens report and track local issues like potholes and garbage collection, with status tracking, admin resolution and role-based access.</p><span class="stack">Spring Boot · PostgreSQL · Docker</span><span class="more">View on GitHub →</span></div></a>
+          <a class="item" data-open href="https://github.com/Vivek-sandilya18/Student-management-system" target="_blank" rel="noopener"><span class="num">02</span><div><h3>Student Management System</h3><p>CRUD REST APIs in a layered architecture, with live search and email OTP verification so a student is added only after confirmation.</p><span class="stack">Spring Boot · MySQL</span><span class="more">View on GitHub →</span></div></a>
+          <a class="item" data-open href="https://github.com/Vivek-sandilya18" target="_blank" rel="noopener"><span class="num">03</span><div><h3>MovieVerse</h3><p>A movie discovery app using the TMDB API, with live search, genre, rating and year filters, a trailer modal, a watchlist and a dark/light theme.</p><span class="stack">Angular · TypeScript · RxJS</span><span class="more">View on GitHub →</span></div></a>
+          <a class="item" data-open href="https://github.com/Vivek-sandilya18/blogging_Application" target="_blank" rel="noopener"><span class="num">04</span><div><h3>Blogging Application</h3><p>A blogging platform with user authentication, content management and a responsive UI, containerized with Docker.</p><span class="stack">Full stack · REST APIs · Docker</span><span class="more">View on GitHub →</span></div></a>
+          <a class="item" data-open href="https://github.com/Vivek-sandilya18" target="_blank" rel="noopener"><span class="num">05</span><div><h3>Smart File Organizer</h3><p>Sorts files into categories, finds duplicates with SHA-256 hashing and lets you download the organized files as a ZIP.</p><span class="stack">Python · Flask</span><span class="more">View on GitHub →</span></div></a>
+          <a class="item" data-open href="https://github.com/Vivek-sandilya18/Library-management-system" target="_blank" rel="noopener"><span class="num">06</span><div><h3>Library Management System</h3><p>A backend system for managing books and users, with REST APIs and database integration.</p><span class="stack">Java · REST API</span><span class="more">View on GitHub →</span></div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2 class="rv">Where I've <em>worked</em></h2>
+      <div class="exp-grid">
+        <div class="photo small rv"><img src="assets/profile.jpg" alt="Vivek Sharma at his laptop" width="900" height="1200" loading="lazy"></div>
+        <div class="timeline">
+          <div class="tl-line"></div>
+          <div class="tl rv"><i></i><div class="when">Mar 2026 – Aug 2026 · Noida</div><h3>Java &amp; Spring Boot Developer Intern</h3><b>CodeSquadz</b><p>Built REST APIs with Spring Boot, Hibernate and JPA on MySQL, applying OOPs, Collections, Streams and Lambda expressions. Tested with Postman, JUnit 5 and Mockito, and used Git, GitHub and Maven.</p></div>
+          <div class="tl rv"><i></i><div class="when">Oct 2025 – Jan 2026 · Remote</div><h3>Web Development Intern</h3><b>REDX Technologies</b><p>Built responsive interfaces with HTML, CSS, Bootstrap and JavaScript, and backend features with PHP and MySQL. Helped debug and test features across browsers and devices.</p></div>
+          <div class="tl rv"><i></i><div class="when">Aug 2023 – Jul 2027 · Noida</div><h3>B.Tech, Computer Science</h3><b>MGM College of Engineering and Technology</b><p>DSA, OOPs, DBMS, Operating Systems, Computer Networks and Software Engineering.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <h2 class="rv">Beyond the <em>code</em></h2>
+      <div class="ach">
+        <div class="rv"><h3>Hyperspace Innovation Hackathon</h3><p>Participant</p></div>
+        <div class="rv"><h3>TeckSprint Hackathon</h3><p>Participant</p></div>
+        <div class="rv"><h3>College certifications</h3><p>Java, PHP &amp; MySQL, Python, Machine Learning</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="rv">Say <em>hello</em></h2>
+      <p class="rv">Hiring, building something, or just want to talk? Send me an email and I'll reply soon.</p>
+      <div class="links rv">
+        <a href="mailto:vs4589813@gmail.com">Email ↗</a>
+        <a href="https://github.com/Vivek-sandilya18" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/vivek-sharma-java17/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="by"><img src="assets/logo.jpg" alt="VS logo">Designed &amp; developed by <b>Vivek Sharma</b></span>
+    <span>© 2026 · All rights reserved</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
