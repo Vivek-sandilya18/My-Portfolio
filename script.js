@@ -84,7 +84,7 @@
       gsap.from(el,{y:70,opacity:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
     });
     gsap.utils.toArray('.item').forEach(function(el){
-      gsap.from(el,{x:80,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+      gsap.from(el,{y:24,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'}});
     });
     gsap.utils.toArray('.sk span').forEach(function(el,i){
       gsap.from(el,{scale:.6,opacity:0,duration:.6,ease:'back.out(2)',scrollTrigger:{trigger:el.parentNode,start:'top 85%'},delay:(i%8)*.05});
@@ -117,4 +117,17 @@
     el.addEventListener('mouseenter',function(){cur.classList.add('show');});
     el.addEventListener('mouseleave',function(){cur.classList.remove('show');});
   });
+    /* ---------- contact form (Web3Forms) ---------- */
+  var form=doc.getElementById('cform');
+  if(form){form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var msg=doc.getElementById('fmsg'), btn=form.querySelector('button');
+    if(!form.checkValidity()){form.reportValidity();return;}
+    btn.disabled=true;btn.textContent='Sending...';msg.className='fmsg';msg.textContent='';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))})
+      .then(function(r){return r.json();})
+      .then(function(d){if(!d.success)throw new Error(d.message);form.reset();msg.textContent='Thanks! Your message has been sent.';msg.className='fmsg ok';})
+      .catch(function(){msg.textContent='Something went wrong. Please email me directly.';msg.className='fmsg err';})
+      .then(function(){btn.disabled=false;btn.textContent='Send message →';});
+  });}
 })();
